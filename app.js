@@ -1,1 +1,1 @@
-document.getElementById("time").innerHTML = "my date"
+document.getElementById("time").innerHTML = Date()
