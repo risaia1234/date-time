@@ -3,9 +3,21 @@ const hour = date.getHours();
 const minute = date.getMinutes();
 const seconds = date.getSeconds();
 const time_parts = [hour, minute, seconds];
-const day = date.getDay();
-//const month = date.getMonth()
-//console.log(month)
+const time = time_parts.join(":")
+
+document.getElementById("time").innerHTML = moment().format('LTS');
+document.getElementById("date").innerHTML = moment().format('LTS');
+document.getElementById("pm/am").innerHTML = moment().format('LTS');
+document.getElementsByClassName("date").innerHTML = join(", ");
+
+const day = date.getDate();
+const month = date.getMonth()
+const year = date.getFullYear()
+console.log(day)
+console.log(month)
+console.log(year)
+
+
 /*Date.prototype.theMonth = function {
     if (this.getMonth() == 0) {return "January"};
     if (this.getMonth() == 1) {return "Febuary"};
@@ -23,8 +35,4 @@ const day = date.getDay();
 
 const month = date.theMonth();
 console.log(month);
-*/
-document.getElementById("time").innerHTML = moment();
-
-
-//console.log(moment());
+*///console.log(moment());
