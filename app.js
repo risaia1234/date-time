@@ -44,9 +44,16 @@ function getDate() {
     return date1;
 }
 
+function formater(num) {
+    let string = num.toString();
+    string[0] = "0" + string;
+    return string;
+} 
+
 function getHour() {
     const date = new Date();
     let hour = date.getHours();
+    hour = formater(hour);
     return hour;
 }
 
@@ -68,10 +75,11 @@ function getPeriod() {
     if (hour >= 13) {
         return "PM";
     } else {
-        return "AM"
+        return "AM";
     }
 }
-/*
+
+
 function updateClock() {
     const ids = ["dayname", "month", "daynumber", "year", "hours", "minutes", "seconds", "period"]
     let day = getDayNameShortHand();
@@ -82,9 +90,13 @@ function updateClock() {
     let minute = getMinute();
     let second = getSecond();
     let period = getPeriod();
-    for (i = 0, i < ids.length, i++) {
-        document.getElementById(ids[i]).innerHTML = 
+    const elementList = [day, month, date, year, hour, minute, second, period];
+    for (i = 0; i < ids.length; i++) {
+        document.getElementById(ids[i]).innerHTML = elementList[i];
+        document.getElementById(ids[4]).innerHTML = formater(elementList[4]);
+
     }
-    
 }
-*/
+
+
+updateClock()

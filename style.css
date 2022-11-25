@@ -15,21 +15,18 @@ body {
     color: #fff;
     font-family: "Segoe UI", sans-serif;
     background: #10101E;
-    width: 360x;
     padding: 15px 10px;
     border: 3px solid #2E94E3;
     border-radius: 5px;
-    transition: background-color .3s;
+    transition: background-color .2s;
 }
 
 .datetime:hover {
     background-color: #2E94E3;
-    
 }
 
 .date {
     font-size: 20px;
-    font-weight: 600px;
     text-align: center;
     letter-spacing: 3px;
 }
