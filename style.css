@@ -52,10 +52,16 @@ body {
 
 .time span:last-child {
     background: #2E94E3;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 600;
     margin-top: 2px;
     padding: 1px 3px;
     border-radius: 3px;
 
 }
+
+.dayname {
+    margin-right: 0px;
+    padding-right: 0px;
+} 
+

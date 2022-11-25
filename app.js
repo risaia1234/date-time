@@ -1,38 +1,90 @@
 const date = new Date();
-const hour = date.getHours();
-const minute = date.getMinutes();
-const seconds = date.getSeconds();
-const time_parts = [hour, minute, seconds];
-const time = time_parts.join(":")
 
-document.getElementById("time").innerHTML = moment().format('LTS');
-document.getElementById("date").innerHTML = moment().format('LTS');
-document.getElementById("pm/am").innerHTML = moment().format('LTS');
-document.getElementsByClassName("date").innerHTML = join(", ");
-
-const day = date.getDate();
-const month = date.getMonth()
-const year = date.getFullYear()
-console.log(day)
-console.log(month)
-console.log(year)
-
-
-/*Date.prototype.theMonth = function {
-    if (this.getMonth() == 0) {return "January"};
-    if (this.getMonth() == 1) {return "Febuary"};
-    if (this.getMonth() == 2) {return "March"};
-    if (this.getMonth() == 3) {return "April"};
-    if (this.getMonth() == 4) {return "May"};
-    if (this.getMonth() == 5) {return "June"};
-    if (this.getMonth() == 6) {return "July"};
-    if (this.getMonth() == 7) {return "August"};
-    if (this.getMonth() == 8) {return "Septmeber"};
-    if (this.getMonth() == 9) {return "October"};
-    if (this.getMonth() == 10) {return "November"};
-    if (this.getMonth() == 11) {return "December"};
+function getMonthNameShortHand() {
+    const shorthand_months = ["Jan", "Feb", "March", "April", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const date = new Date();
+    let num_month = date.getMonth();
+    let month = shorthand_months[num_month - 1];
+    return month;
 }
 
-const month = date.theMonth();
-console.log(month);
-*///console.log(moment());
+function getMonthNameLongHand() {
+    const longhand_months = ["January", "Febuary", "March", "April", "June", "July", "August", "September", "October", "November", "December"];
+    const date = new Date();
+    let num_month = date.getMonth();
+    let month = longhand_months[num_month -1 ];
+    return month;
+}
+
+function getDayNameLongHand() {
+    const longhand_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const date = new Date();
+    let num_day = date.getDay();
+    let day = longhand_days[num_day];
+    return day;
+}
+
+function getDayNameShortHand() {
+    const shorthand_days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+    const date = new Date();
+    let num_day = date.getDay();
+    let day = shorthand_days[num_day];
+    return day;
+}
+
+function getYear() {
+    const date = new Date();
+    let year = date.getFullYear();
+    return year;
+}
+
+function getDate() {
+    const date = new Date();
+    let date1 = date.getDate();
+    return date1;
+}
+
+function getHour() {
+    const date = new Date();
+    let hour = date.getHours();
+    return hour;
+}
+
+function getMinute() {
+    const date = new Date();
+    let minute = date.getMinutes();
+    return minute;
+}
+
+function getSecond() {
+    const date = new Date();
+    let seconds = date.getSeconds();
+    return seconds;
+}
+
+function getPeriod() {
+    const date = new Date();
+    let hour = date.getHours();
+    if (hour >= 13) {
+        return "PM";
+    } else {
+        return "AM"
+    }
+}
+/*
+function updateClock() {
+    const ids = ["dayname", "month", "daynumber", "year", "hours", "minutes", "seconds", "period"]
+    let day = getDayNameShortHand();
+    let month = getMonthNameLongHand();
+    let date =getDate();
+    let year =getYear();
+    let hour =getHour();
+    let minute = getMinute();
+    let second = getSecond();
+    let period = getPeriod();
+    for (i = 0, i < ids.length, i++) {
+        document.getElementById(ids[i]).innerHTML = 
+    }
+    
+}
+*/
